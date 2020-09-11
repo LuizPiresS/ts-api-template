@@ -1,0 +1,9 @@
+{
+  "name": "lps.dev.br",
+  "version": "1.0.0",
+  "description": "Site pessoal do dev que vos fala\"",
+  "main": "index.js",
+  "repository": "git@github.com:LuizPiresS/lps.dev.br.git",
+  "author": "Luiz Pires <kw13code@gmail.com>",
+  "license": "MIT"
+}
