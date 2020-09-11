@@ -6,6 +6,10 @@
   "repository": "git@github.com:LuizPiresS/lps.dev.br.git",
   "author": "Luiz Pires <kw13code@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "yarn build && node dist/index.js",
+    "build": "tsc"
+  },
   "devDependencies": {
     "@types/module-alias": "^2.0.0",
     "@types/node": "^14.10.0",
