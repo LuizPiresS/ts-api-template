@@ -14,10 +14,8 @@
     "lint:fix": "eslint ./src ./test --ext .ts --fix",
     "style:check": "prettier --check 'src/**/*.ts' 'test/**/*.ts'",
     "style:fix": "prettier --write 'src/**/*.ts' 'test/**/*.ts'",
-    "test": "jest",
-    "test:unit": "",
-    "test:functional": "jest --projects ./test --runInBand",
-    "test:coverage": "jest --coverage --passWithNoTests"
+    "test:unit": "jest",
+    "test:functional": "jest --projects ./test --runInBand"
   },
   "devDependencies": {
     "@types/express": "^4.17.8",
