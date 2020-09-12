@@ -1,0 +1,3 @@
+{
+  "src/**/*.ts": ["yarn style:fix", "yarn test:unit"]
+}
