@@ -1,6 +1,7 @@
 import { Server } from '@overnightjs/core';
 import bodyParser from 'body-parser';
 import { Application } from 'express';
+
 import { PortfolioController } from './controllers/portfolio';
 import './utils/module-alias';
 
