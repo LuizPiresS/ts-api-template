@@ -12,7 +12,7 @@ services:
     ports:
       - 3003:3003
     volumes:
-      - ..:/lps.dev.br
+      - ..:/workspace
     links:
       - database
 
