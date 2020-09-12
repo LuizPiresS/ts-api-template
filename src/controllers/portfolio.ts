@@ -1,8 +1,11 @@
-describe("Personal portfolio functional tests", () => {
-  it("Should return personal data with just few git repository", async () => {
-    const { body, status } = await global.testRequest.get("/portfolio");
-    expect(status).toBe(200);
-    expect(body).toEqual({
+import { Controller, Get } from "@overnightjs/core";
+import { Request, Response } from "express";
+
+@Controller("portfolio")
+export class PortfolioController {
+  @Get("")
+  public getPortfolioForLoggedUser(_: Request, res: Response): void {
+    res.send({
       id: 260514439,
       name: "ITeacher",
       private: false,
@@ -23,5 +26,5 @@ describe("Personal portfolio functional tests", () => {
         url: "https://api.github.com/licenses/mit",
       },
     });
-  });
-});
+  }
+}
