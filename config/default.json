@@ -1,0 +1,10 @@
+{
+  "App": {
+    "resources": {
+      "Github": {
+        "apiUrl": "http://api.github.com/repos/LuizPiresS/",
+        "apiToken": "do-not-hard-code"
+      }
+    }
+  }
+}
