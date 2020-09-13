@@ -4,7 +4,7 @@ import { Request, Response } from 'express';
 @Controller('portfolio')
 export class PortfolioController {
   @Get('')
-  public getPortfolioForLoggedUser(_: Request, res: Response): void {
+  public getPortfolioData(_: Request, res: Response): void {
     res.send({
       id: 260514439,
       name: 'ITeacher',
