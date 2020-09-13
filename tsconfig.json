@@ -26,5 +26,10 @@
     "emitDecoratorMetadata": true
   },
   "include": ["./src/**/*.ts", "./src/types/globals.d.ts"],
-  "exclude": ["./node_modules/*", "dist"]
+  "exclude": [
+    "./node_modules/*",
+    "dist",
+    "./src/**/*.test.ts",
+    "./src/**/*.spec.ts"
+  ]
 }
