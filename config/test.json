@@ -1,0 +1,9 @@
+{
+  "App": {
+    "resources": {
+      "Github": {
+        "apiToken": "test-token"
+      }
+    }
+  }
+}
