@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 import { Application } from 'express';
 
 import { PortfolioController } from './controllers/portfolio';
-import './utils/module-alias';
 
 export class SetupServer extends Server {
   constructor(private port = 3003) {
