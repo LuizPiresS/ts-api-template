@@ -1,5 +1,7 @@
 import { AxiosStatic } from 'axios';
 
+import { InternalError } from '../common/errors/internal-error';
+
 export interface DataGithubResponse {
   [key: string]: string | number | boolean;
 }
@@ -124,6 +126,14 @@ export interface PortfolioRepo {
   language: DataGithubResponse;
 }
 
+export class ClientRequestError extends InternalError {
+  constructor(message: string) {
+    const internalMessage =
+      'Unexpected error when trying to communicate to Github';
+
+    super(`${internalMessage}: ${message}`);
+  }
+}
 export class GithubRepos {
   // É necessário que se passe um axios como parâmetro
   constructor(protected request: AxiosStatic) {}
@@ -132,11 +142,15 @@ export class GithubRepos {
     githubUserName: string,
     repoName: string
   ): Promise<PortfolioRepo> {
-    const response = await this.request.get<GithubReposResponse>(
-      `http://api.github.com/repos/${githubUserName}/${repoName}`
-    );
+    try {
+      const response = await this.request.get<GithubReposResponse>(
+        `http://api.github.com/repos/${githubUserName}/${repoName}`
+      );
 
-    return this.normalizedResponse(response.data);
+      return this.normalizedResponse(response.data);
+    } catch (err) {
+      throw new ClientRequestError(err.message);
+    }
   }
 
   private normalizedResponse(repo: GithubReposResponse): PortfolioRepo {
