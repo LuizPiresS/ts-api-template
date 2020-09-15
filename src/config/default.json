@@ -2,7 +2,7 @@
   "App": {
     "resources": {
       "Github": {
-        "apiUrl": "http://api.github.com/repos/LuizPiresS/",
+        "apiUrl": "http://api.github.com/repos/",
         "apiToken": "do-not-hard-code"
       }
     }
