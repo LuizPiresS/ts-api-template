@@ -15,7 +15,8 @@
     "style:check": "prettier --check 'src/**/*.ts' 'test/**/*.ts'",
     "style:fix": "prettier --write 'src/**/*.ts'",
     "test:unit": "jest --passWithNoTests -c ./jest-unit-config.js",
-    "test:functional": "jest  --passWithNoTests --runInBand -c './jest-integration-config.js'"
+    "test:functional": "jest  --passWithNoTests --runInBand -c './jest-integration-config.js'",
+    "test:coverage": "jest  --passWithNoTests --runInBand -c './jest-integration-config.js' && jest  --passWithNoTests --runInBand -c './jest-unit-config.js'"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
