@@ -1,4 +1,5 @@
 import { AxiosStatic } from 'axios';
+import config, { IConfig } from 'config';
 
 import { InternalError } from '../common/errors/internal-error';
 
@@ -134,6 +135,8 @@ export class ClientRequestError extends InternalError {
     super(`${internalMessage}: ${message}`);
   }
 }
+
+const githubResourcesConfig: IConfig = config.get('App.resources.Github');
 export class GithubRepos {
   // É necessário que se passe um axios como parâmetro
   constructor(protected request: AxiosStatic) {}
@@ -144,7 +147,7 @@ export class GithubRepos {
   ): Promise<PortfolioRepo> {
     try {
       const response = await this.request.get<GithubReposResponse>(
-        `http://api.github.com/repos/${githubUserName}/${repoName}`
+        `${githubResourcesConfig.get('apiUrl')}/${githubUserName}/${repoName}`
       );
 
       return this.normalizedResponse(response.data);
