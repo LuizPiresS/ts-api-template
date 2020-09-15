@@ -10,7 +10,7 @@
     "start": "yarn build && node dist/index.js",
     "start:dev": "tsnd --respawn --exit-child --debounce --clear --transpile-only --inspect --no-notify src/index.ts",
     "build": "tsc",
-    "lint": "eslint ./src ./test --ext .ts",
+    "lint": "eslint ./src --ext .ts",
     "lint:fix": "eslint ./src ./test --ext .ts --fix",
     "style:check": "prettier --check 'src/**/*.ts' 'test/**/*.ts'",
     "style:fix": "prettier --write 'src/**/*.ts'",
