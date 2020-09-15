@@ -1,5 +1,6 @@
-import { SetupServer } from '@src/server';
 import supertest from 'supertest';
+
+import { SetupServer } from '../server';
 
 beforeAll(() => {
   const server = new SetupServer();
